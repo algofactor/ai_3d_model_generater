@@ -14,9 +14,7 @@ build:
     - "python3.10-dev"
     - "zip"
     - "xvfb"
-    - "nvidia-cuda-toolkit"
   python_packages:
-    - "pydantic<2.0.0"
     - "rembg[gpu,cli]"
     - "trimesh==4.0.2"
     - "tqdm"
@@ -31,7 +29,6 @@ build:
     - "imageio"
     - "imageio-ffmpeg"
     - "omegaconf"
-    - "torch"
     - "einops"
     - "plyfile"
     - "pygltflib"
@@ -41,27 +38,15 @@ build:
     - "accelerate"
     - "transformers"
     - "xatlas"
-    - "trimesh"
     - "PyMCubes"
     - "pymeshlab"
-    - "rembg[gpu,cli]"
     - "gradio"
     - "torch-ema" 
-    - "einops" 
     - "tensorboardX"
-    - "plyfile"
-    - "dearpygui"
-    - "huggingface_hub"
-    - "diffusers" 
-    - "accelerate" 
-    - "transformers" 
-    - "xatlas"
-    - "trimesh" 
-    - "PyMCubes"
-    - "pymeshlab"
-    - "omegaconf" 
-    - "ninja" 
-    - "gradio"
+    - "torch==2.0.0"
+    - "torchvision==0.15.0"
+    - "torchaudio==2.0.0"
+    - "pydantic<2.0.0"
   run:
     - pip install -q einops plyfile dearpygui huggingface_hub diffusers accelerate transformers xatlas trimesh PyMCubes pymeshlab rembg[gpu,cli] omegaconf ninja
     - pip install -q https://github.com/camenduru/diff-gaussian-rasterization/releases/download/v1.0/diff_gaussian_rasterization-0.0.0-cp310-cp310-linux_x86_64.1.whl
@@ -70,5 +55,6 @@ build:
     - pip install -q https://github.com/camenduru/diff-gaussian-rasterization/releases/download/v1.0/kiui-0.1.8-py3-none-any.whl
     - pip install -q git+https://github.com/NVlabs/nvdiffrast
     - pip install -q git+https://github.com/ashawkey/kiuikit
-    - pip install "pydantic<2.0.0"
+    - pip install ninja==1.10.2.3
+   
 predict: "predict.py:Predictor"
